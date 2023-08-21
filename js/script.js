@@ -30,8 +30,8 @@ function handleClickShowBtn(areaType) {
     getAplyInputField();
     setFinalTotal();
 
-}d
+}
   
- }
+ 
 
  
