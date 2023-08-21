@@ -18,7 +18,8 @@ function handleClickShowBtn(areaType) {
     const itemName = areaType.childNodes[3].childNodes[3].innerText;
     const p = document.createElement('p');
     p.classList.add('text-area-desing')
-    // p.innerHTML = ${count + 1}. ${itemName};
+    p.innerHTML = `${count + 1}.${itemName}`;
+    
     areaText.appendChild(p);
 
     // price total 
