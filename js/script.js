@@ -1,16 +1,4 @@
 
-//  function handleClickBtn(event){
-//   const productName = event.childNodes[3].childNodes[3].innerText;
-//   // console.log(productName);
-//   const productNameContainer = document.querySelector("#selected-Items")
-//   const count = productNameContainer.childElementCount;
-//  const p=document.createElement("p");
-//  p.innerText= count+1+" "+productName;
-//  productNameContainer.appendChild(p);
-
-//  const productPrice = event.childNodes[3].childNodes[3].innerText;
-// console.log(productPrice);
-
 let total = 0;
 function handleClickShowBtn(areaType) {
     const areaText = document.getElementById('text-area');
@@ -63,3 +51,6 @@ function setFinalTotal(total) {
         purchaseBtn.removeAttribute('disabled');
     }
 }
+document.getElementById("go-home-modal-btn").addEventListener("click", function(){
+    window.location.href = "index.html";
+})
