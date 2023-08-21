@@ -47,7 +47,7 @@ function setFinalTotal(total) {
     if (total == 0) {
         purchaseBtn.setAttribute('disabled', true);
     }
-    else {
+    else { 
         purchaseBtn.removeAttribute('disabled');
     }
 }
