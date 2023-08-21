@@ -18,7 +18,7 @@ function handleClickShowBtn(areaType) {
     const itemName = areaType.childNodes[3].childNodes[3].innerText;
     const p = document.createElement('p');
     p.classList.add('text-area-desing')
-    p.innerHTML = ${count + 1}. ${itemName};
+    // p.innerHTML = ${count + 1}. ${itemName};
     areaText.appendChild(p);
 
     // price total 
@@ -31,7 +31,34 @@ function handleClickShowBtn(areaType) {
     setFinalTotal();
 
 }
-  
- 
+function getAplyInputField() {
+    const couponInput = document.getElementById('coupon-input');
+    const couponBtn = document.getElementById('coupon-btn');
+    if (total > 200) {
+        couponBtn.removeAttribute('disabled');
+        couponBtn.addEventListener('click', function () {
+            const inputValue = couponInput.value.trim();
+            if (inputValue === 'SELL200') {
+                const discount = total * 0.2;
+                const cardTotalTK = document.getElementById('card-total-price');
+                cardTotalTK.innerText = (total - discount).toFixed(2);
+                const cardDiscount = document.getElementById('card-discount');
+                cardDiscount.innerText = discount.toFixed(2)
+            }
+            couponInput.value = ' '
+        });
+    }
+    else {
+        couponBtn.setAttribute('disabled', true);
+    }
+}
 
- 
+function setFinalTotal(total) {
+    const purchaseBtn = document.getElementById('make-purchase-btn');
+    if (total == 0) {
+        purchaseBtn.setAttribute('disabled', true);
+    }
+    else {
+        purchaseBtn.removeAttribute('disabled');
+    }
+}
